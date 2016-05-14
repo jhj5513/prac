@@ -65,7 +65,7 @@
 }
 
 .tab_box1 .tab_select {
-	border-top: 3px solid #fcd50c;
+	border-top: 10px solid #c52d2f;
 	background-color:#ffffff;
 }
 
@@ -112,9 +112,10 @@
 .test_box1 .table_step0_td1 {
 	font-size:30px;
 	color: #282828;
-	letter-spacing: -1px;
+	letter-spacing: -3px;
 	line-height: 45px;
-	margin-left:205px;
+	text-align: center;
+ 
 }
 
 .test_box1 .table_step0_td1 span {
@@ -136,8 +137,6 @@
 	font-size:16px;
 	color: #999999;
 	line-height: 28px;
-	
-	
 }
 
 .test_box1 .table_step0_td3 span {
@@ -152,6 +151,9 @@
 	font-size:19px;
 	padding-top:20px;
 	margin-left:205px;
+	-webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+	
 }
 
 .emailfull {
@@ -353,6 +355,8 @@
 .test_box1 .choice_off {
 	background-color:#f3f3f3;
 	color:#999999;
+	-webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 
 .test_box1 .choice_on {
@@ -361,12 +365,16 @@
 	border-bottom: 5px solid #d2b10a;
 	background-image:url(../images/roboadvisor/img_check.png);
 	background-repeat: no-repeat;
+	-webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 
 .test_box1 .choice_over {
 	background-color:#fcd50c;
 	color:#282828;
 	border-bottom: 5px solid #d2b10a;
+	-webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 
 .test_box1 .btn_prev {
@@ -378,6 +386,8 @@
 	padding-top:22px;
 	padding-left:30px;
 	color:#FFFFFF;
+	-webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 
 .test_box1 .btn_prev div {
@@ -386,12 +396,16 @@
 	width:10px;
 	height:18px;
 	background-image:url(../images/roboadvisor/btn_prev_arrow_off.png);
+	-webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 
 .test_box1 .btn_prev:hover div {
 	position:absolute;
 	width:10px;
 	height:18px;
+	-webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 	/*background-image:url(../images/roboadvisor/btn_prev_arrow_off.png);*/
 }
 
@@ -404,6 +418,8 @@
 	padding-top:22px;
 	padding-right:30px;
 	color:#FFFFFF;
+	-webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 
 .test_box1 .btn_next div {
@@ -413,6 +429,8 @@
 	width:10px;
 	height:18px;
 	background-image:url(../images/roboadvisor/btn_next_arrow_off.png);
+	-webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 
 .test_box1 .btn_next:hover div {
@@ -420,6 +438,8 @@
 	width:10px;
 	height:18px;
 	/*background-image:url(../images/roboadvisor/btn_next_arrow_off.png);*/
+	-webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 
 
