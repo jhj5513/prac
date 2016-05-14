@@ -6,7 +6,7 @@
 	src:local(¡Ø), url(webfont/NotoSans-Regular.wofff') format('woff');
 }
 
-@import url(../../fonts.googleapis.com/css�family=Roboto_400,500,700.css);
+@import url(../../fonts.googleapis.com/css�family=Roboto_400,500,700.css);
 
 
 /* --------------------------------------------------------	*/
@@ -152,14 +152,15 @@ a:hover, a:active, a:focus {
 .btn_common_on {
 	/*position: absolute;*/
 	text-align:center;
-	background-color:#62b5e0;
+	background-color:#f2f2f2;
 	cursor:pointer;
-	color:#FFFFFF;
+	color:#000000;
 	letter-spacing: -2px;
 }
 
 .btn_common_on:hover {
-	background-color:#666666;
+	background-color:#c52d2f;
+	color:#FFFFFF;
 }
 
 .btn_common_on a{
@@ -177,7 +178,8 @@ a:hover, a:active, a:focus {
 }
 
 .btn_common_off:hover {
-	background-color:#62b5e0;
+	background-color:#c52d2f;
+	color:#FFFFFF;
 }
 
 .btn_common_off a{
