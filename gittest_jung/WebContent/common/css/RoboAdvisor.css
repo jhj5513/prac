@@ -65,7 +65,7 @@
 }
 
 .tab_box1 .tab_select {
-	border-top: 3px solid #fcd50c;
+	border-top: 3px solid #c52d2f;
 	background-color:#ffffff;
 }
 
@@ -128,7 +128,7 @@
 	margin-left:280px;
 	height:4px;
 	width:60px;
-	background-color:#fcd50c;
+	background-color:#db3615;
 }
 
 .test_box1 .table_step0_td3 {
@@ -348,22 +348,26 @@
 }
 
 .test_box1 .choice_off {
+	-webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 	background-color:#f3f3f3;
 	color:#999999;
 }
 
 .test_box1 .choice_on {
-	background-color:#fcd50c;
+	-webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+	background-color:#ffcc33;
 	color:#282828;
-	border-bottom: 5px solid #d2b10a;
+	border-bottom: 10px solid #db3615;
 	background-image:url(../images/roboadvisor/img_check.png);
 	background-repeat: no-repeat;
 }
 
 .test_box1 .choice_over {
-	background-color:#fcd50c;
+	background-color:#ffcc33;
 	color:#282828;
-	border-bottom: 5px solid #d2b10a;
+	border-bottom: 10px solid #db3615;
 }
 
 .test_box1 .btn_prev {
