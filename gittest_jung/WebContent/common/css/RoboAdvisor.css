@@ -112,8 +112,9 @@
 .test_box1 .table_step0_td1 {
 	font-size:30px;
 	color: #282828;
-	letter-spacing: -3px;
+	letter-spacing: -1px;
 	line-height: 45px;
+	margin-left:205px;
 }
 
 .test_box1 .table_step0_td1 span {
@@ -135,6 +136,8 @@
 	font-size:16px;
 	color: #999999;
 	line-height: 28px;
+	
+	
 }
 
 .test_box1 .table_step0_td3 span {
