@@ -92,6 +92,7 @@
             var objSurveyData = new Object();
             var objPlanData = new Object();
             var iCheckNum_total = 0;
+            var sRiskPoint =0;
             //Prev / Next Button Click
             $("#btn_step0_next, #btn_step1_next, #btn_step2_next, #btn_step3_next, #btn_step4_next, #btn_step5_next, #btn_step1_prev, #btn_step2_prev, #btn_step3_prev, #btn_step4_prev, #btn_step5_prev, #btn_step6_next, #btn_step7_next, #btn_step8_prev, #btn_step8_next, #btn_step9_prev, #btn_step9_next").click(function () {
                 //Box : step0 ~ step5
@@ -151,6 +152,8 @@
                             case 8: objSurveyData.param07 = iCheckNumber; break;  //plan
                         }
                     }
+/* 
+ 					//일시 보류 
 
                      if (iSelNum == 5) {
                         var json_data = JSON.stringify({ data: objSurveyData });
@@ -184,14 +187,53 @@
 
                         $("#tab_box1").css("display", "none");
                     } 
+                     */
+                     
+                     if(iSelNum ==5) {
+                      	alert($("#result_point").val(iCheckNum_total));
+                         
+                     	 iCheckNum_total
+                     	 if(iCheckNum_total >= 5 && iCheckNum_total <= 7){
+                     		sRiskPoint = 1;
+                     		 var slider = $("#result_Range").data("ionRangeSlider");
+                              slider.update({
+                                  from: eval(sRiskPoint)
+                              });
+                     		$("#result_point").html("1");
+                     	}if(iCheckNum_total >=8 && iCheckNum_total <=10){
+                     		sRiskPoint = 2;
+                    		 var slider = $("#result_Range").data("ionRangeSlider");
+                             slider.update({
+                                 from: eval(sRiskPoint)
+                             });
+                     		$("#result_point").html("2");
+             			}if(iCheckNum_total >=11 && iCheckNum_total <=14){
+                     		sRiskPoint = 3;
+                    		 var slider = $("#result_Range").data("ionRangeSlider");
+                             slider.update({
+                                 from: eval(sRiskPoint)
+                             });
+             				$("#result_point").html("3");
+             			}if(iCheckNum_total >=15 && iCheckNum_total <=17){
+                     		sRiskPoint = 4;
+                    		 var slider = $("#result_Range").data("ionRangeSlider");
+                             slider.update({
+                                 from: eval(sRiskPoint)
+                             });
+             				$("#result_point").html("4");
+                     	}else if(iCheckNum_total >=18 && iCheckNum_total <=20){
+                     		sRiskPoint = 5;
+                    		 var slider = $("#result_Range").data("ionRangeSlider");
+                             slider.update({
+                                 from: eval(sRiskPoint)
+                             });
+                     		$("#result_point").html("5");
+                     	}
+             			
+             			iCheckNum_total = 0;
+             			sRiskPoint = 0;
+                     }
                     
-                    
-                    /* if(iSelNum ==5) {
-                    	alert('최종 점수' +iCheckNum_total)
-                    	$("#result_point").val(iCheckNum_total);
-                    	alert($("#result_point").val(iCheckNum_total));
-                    	
-                    } */
 
                     //Result 결과 처리 n 
                     if (iSelNum == 6 || iSelNum == 7) {	//G, K
@@ -426,7 +468,7 @@
             $("#result_Range").ionRangeSlider({
                 type: "single",
                 min: 1,
-                max: 9,
+                max: 5,
                 step: 1,
                 grid: true,
                 grid_snap: true,
@@ -501,15 +543,12 @@
                     $("#step8_" + i.toString()).addClass("choiceplan_off");
                 }
                 $("#txt_plan").val("");
-
+	            iCheckNum_total = 0;
+	            sRiskPoint = 0;
                 $("#btn_step1_prev").click();
             });
             
-/*              $("#btnConfirm").click(function(){
-            	 alert("pww...");
-            	 $("#btn_step0_next").click();
-            	
-            	}) */
+
             	$("#btn_step0_next").on('click', function(event){
 	            	$('#step0').css("display", "none");
 	            	$('#step1').css("display", "block");})
