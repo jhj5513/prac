@@ -8,7 +8,7 @@ public class PortfolioDTO {
 	private int iCheckNumber4;
 	private int iCheckNumber5;
 	private int iCheckNumber_total;
-	private int iCheckNumber_avg;
+	
 	
 	
 	

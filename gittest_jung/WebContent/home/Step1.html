@@ -84,10 +84,14 @@
 <script type="text/javascript" src="../common/script/resizewindow.js"></script>
 <script type="text/javascript">
 
+
+
+
+
         $(document).ready(function () {
             var objSurveyData = new Object();
             var objPlanData = new Object();
-
+            var iCheckNum_total = 0;
             //Prev / Next Button Click
             $("#btn_step0_next, #btn_step1_next, #btn_step2_next, #btn_step3_next, #btn_step4_next, #btn_step5_next, #btn_step1_prev, #btn_step2_prev, #btn_step3_prev, #btn_step4_prev, #btn_step5_prev, #btn_step6_next, #btn_step7_next, #btn_step8_prev, #btn_step8_next, #btn_step9_prev, #btn_step9_next").click(function () {
                 //Box : step0 ~ step5
@@ -99,7 +103,8 @@
                 var iSelNum = eval(sSelBoxID.substring(4, 5)); 
                 var iPrevNum = eval(sSelBoxID.substring(4, 5)) - 1;
                 var iNextNum = eval(sSelBoxID.substring(4, 5)) + 1;
-                var iCheckNumber = 0;                                   //문항 Select Number
+                var iCheckNumber = 0;     //문항 Select Number
+                
                 $("#sel" + iSelNum.toString()).css("display", "none");
                 $("#txt_NowAge_err, #txt_ForecastRetire_err,#txt_Life_err, #txt_TargetPriceRetire_err, #txt_initInvestPrice_err, #txt_MonthSavePrice_err, #txt_InvestTerm_err, #txt_TargetPrice_err, #txt_Validation_err").text("");
 
@@ -111,25 +116,28 @@
                         iClassPosition = 2;
                     }
 
-                    $("#txt_plan_err").text("");
+/*                     $("#txt_plan_err").text("");
                     if (iSelNum == 0) {
                         if ($.cookie('qbemail') != "Y") {
                             $("#emailwrite").css("display", "block");
                             return;
                         }
-                    }
+                    } */
                     //문항Check
                     if ((iSelNum > 0 && iSelNum < 6) || iSelNum == 8) {
                         for (i = 1; i <= imax; i++) {
                             if ($("#" + sSelBoxID + "_" + i).attr('class').split(" ")[iClassPosition].split("_")[1] == "on") iCheckNumber = i;
-							       
+
                         }
-                        alert(iCheckNumber) 
+                        iCheckNum_total += iCheckNumber;
+                        alert(iCheckNum_total)
+                        
                         if (iCheckNumber == 0) {
                             if (iSelNum == 8) {
                                 $("#txt_plan_err").text("플랜을 선택하여 주세요!");
                             } else {
                                 $("#sel" + iSelNum.toString()).css("display", "block");
+                             
                             }
                             return;
                         }
@@ -144,12 +152,12 @@
                         }
                     }
 
-                    if (iSelNum == 5) {
+                     if (iSelNum == 5) {
                         var json_data = JSON.stringify({ data: objSurveyData });
                         $.ajax({
                             type: "POST",
                             async: false,
-                            url: "roboadvisor.asmx/Survay",
+                            url: "../data/survey",
                             data: json_data,
                             processData: false,
                             contentType: "Application/json; charset=utf-8",
@@ -175,7 +183,15 @@
                         });
 
                         $("#tab_box1").css("display", "none");
-                    }
+                    } 
+                    
+                    
+                    /* if(iSelNum ==5) {
+                    	alert('최종 점수' +iCheckNum_total)
+                    	$("#result_point").val(iCheckNum_total);
+                    	alert($("#result_point").val(iCheckNum_total));
+                    	
+                    } */
 
                     //Result 결과 처리 n 
                     if (iSelNum == 6 || iSelNum == 7) {	//G, K
